@@ -77,3 +77,22 @@ test('stable ID prefixes are enforced and duplicate IDs are never published', ()
   assert.equal(validateContentRecord(lesson({ content_id: 'AnalogiesLesson' }), context).valid, false)
   assert.deepEqual(getPublishedContent([lesson(), lesson({ title: 'Duplicate record' })], context), [])
 })
+
+test('invalid syllabus mapping statuses are excluded even when IDs resolve', () => {
+  const invalidNodes = syllabusNodes.map((node) =>
+    node.node_id === 'T1-GIR-ANALOGY' ? { ...node, mapping_status: 'unresolved' } : node,
+  )
+  const invalidContext = { syllabusNodes: invalidNodes, sourceRegister }
+  assert.equal(validateContentRecord(lesson(), invalidContext).valid, false)
+  assert.deepEqual(getPublishedContent([lesson()], invalidContext), [])
+})
+
+test('unapproved answer verification excludes explanations and flashcards', () => {
+  const pendingExplanation = explanation({ answer_verification_status: 'needs_answer_review' })
+  const pendingQuestion = question()
+  assert.deepEqual(getPublishedContent([pendingQuestion, pendingExplanation], context), [])
+  assert.deepEqual(
+    getPublishedContent([flashcard({ answer_verification_status: 'needs_answer_review' })], context),
+    [],
+  )
+})
