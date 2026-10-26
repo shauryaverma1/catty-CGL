@@ -131,8 +131,8 @@ function App() {
             <section className="placeholder-view">
               <div className="placeholder-view-icon"><BookOpen size={27} /></div>
               <div className="eyebrow"><Sparkles size={14} /> YOUR STUDY SPACE</div>
-              <h1>{activeView === 'Syllabus' ? 'Your learning garden' : activeView === 'Practice' ? 'Practice, softly' : activeView === 'My Notes' ? 'Your little notebook' : 'Pocket-sized reminders'}</h1>
-              <p className="placeholder-lede">{activeView === 'Syllabus' ? 'Your syllabus will be organized into clear, cozy paths.' : activeView === 'Practice' ? 'Carefully reviewed practice questions will live here.' : activeView === 'My Notes' ? 'Your personal notes and saved thoughts will find a home here.' : 'Small flashcards will help you revisit what you learn.'}</p>
+              <h1>{activeView === 'Practice' ? 'Practice, softly' : activeView === 'My Notes' ? 'Your little notebook' : 'Pocket-sized reminders'}</h1>
+              <p className="placeholder-lede">{activeView === 'Practice' ? 'Carefully reviewed practice questions will live here.' : activeView === 'My Notes' ? 'Your personal notes and saved thoughts will find a home here.' : 'Small flashcards will help you revisit what you learn.'}</p>
               <div className="coming-card"><span className="coming-flower">✿</span><div><strong>This little corner is growing</strong><p>Milestone 1 is setting up the visual foundation. This section is a placeholder, not a complete study feature.</p></div></div>
               <div className="search-placeholder"><Search size={17} /><input aria-label="Search placeholder content" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search will be available with syllabus data…" disabled /><span>SOON</span></div>
               <button className="secondary-button return-button" onClick={() => chooseView('Home')}>Back to my study space <ChevronRight size={15} /></button>
