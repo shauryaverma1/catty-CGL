@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "topic_id": "T1-GIR-ANALOGY",
+    "title": "Tier-I General Intelligence & Reasoning — Analogies",
+    "mapping_status": "provisional_previous_cycle",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "official_reference": "§13.10.1, printed PDF page 30",
+    "research_effort": "Low–medium (2–4 hours for mapping, examples and independent check)",
+    "visual_lesson_suitability": "High; relation diagrams and visual analogy examples",
+    "question_flashcard_opportunities": "Original analogy examples; relation categories; explanation cards",
+    "academic_risks": "Ensure examples genuinely test a relation and one answer is defensible; 2027 confirmation pending."
+  },
+  {
+    "rank": 2,
+    "topic_id": "T1-QA-PERCENT",
+    "title": "Tier-I Quantitative Aptitude — Percentage",
+    "mapping_status": "provisional_previous_cycle",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "official_reference": "§13.10.3, printed PDF page 31",
+    "research_effort": "Medium (3–5 hours including calculation audit)",
+    "visual_lesson_suitability": "High; percentage bars and worked calculations",
+    "question_flashcard_opportunities": "Original calculations, conversions and method-selection cards",
+    "academic_risks": "Independently calculate every answer; avoid ambiguity in base value; 2027 confirmation pending."
+  },
+  {
+    "rank": 3,
+    "topic_id": "T1-ENG-COMP",
+    "title": "Tier-I English Comprehension — basic comprehension",
+    "mapping_status": "provisional_previous_cycle",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "official_reference": "§13.10.4, printed PDF page 31",
+    "research_effort": "Medium (3–5 hours including answer review)",
+    "visual_lesson_suitability": "Medium; readable passage and evidence-highlight interface",
+    "question_flashcard_opportunities": "Inference, main idea and vocabulary-in-context cards using original passage",
+    "academic_risks": "Use original passage; answers must be supported by text; don't silently import Tier-II syllabus."
+  },
+  {
+    "rank": 4,
+    "topic_id": "T1-GA-HISTORY",
+    "title": "Tier-I General Awareness — History (narrow, sourced subtopic)",
+    "mapping_status": "provisional_previous_cycle",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "official_reference": "§13.10.2, printed PDF page 30",
+    "research_effort": "Medium–high (4–6 hours for topic boundary and fact audit)",
+    "visual_lesson_suitability": "High; timelines and maps if appropriate",
+    "question_flashcard_opportunities": "Date/person/event associations with citations",
+    "academic_risks": "History is official broad scope; specific chapter boundary is editorial and must be justified. 2027 confirmation pending."
+  },
+  {
+    "rank": 5,
+    "topic_id": "T2-P1-MATH",
+    "title": "Tier-II Paper-I — Mathematical Abilities: Number Systems",
+    "mapping_status": "provisional_previous_cycle",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "official_reference": "§13.11.1.1, printed PDF page 31",
+    "research_effort": "Medium (3–5 hours)",
+    "visual_lesson_suitability": "High; number lines and worked examples",
+    "question_flashcard_opportunities": "Number relationships and calculation rules",
+    "academic_risks": "Keep Tier-II mapping separate from Tier-I Quantitative Aptitude; Tier-II level described separately."
+  }
+]
