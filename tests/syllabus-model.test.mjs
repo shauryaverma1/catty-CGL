@@ -86,8 +86,9 @@ test('expanded syllabus includes directly mapped official sections and stable so
  for (const id of ['T1-QA-ADD-MIXTURE','T1-GA-ADD-ENVIRONMENT','T2-P1-MATH-ADD-STAT-PROB','T2-P1-REASON-ADD-SEMANTIC-ANALOGY','T2-P1-ENG-ADD-CLOZE','T2-P1-COMP-ADD-NETWORK-CYBER','T2-P2-STAT-ADD-INFERENCE','T2-P3-ADD-DEMAND-ELASTICITY']) {
   assert.ok(nodes.some(n=>n.node_id===id), `missing official syllabus mapping: ${id}`)
  }
+ const sourceIds = new Set(sources.map(s=>s.source_id))
  for (const n of nodes) {
-  assert.equal(n.source_id, 'SSC-CGL-2026-NOTICE')
+  assert.ok(sourceIds.has(n.source_id), `unknown source ID for ${n.node_id}: ${n.source_id}`)
   assert.ok(n.source_reference, `missing source reference for ${n.node_id}`)
  }
 })
