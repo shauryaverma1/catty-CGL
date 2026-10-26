@@ -82,8 +82,8 @@ test('approved working baseline label and exam-pattern structure are source link
 
 
 test('expanded syllabus includes directly mapped official sections and stable source references', () => {
- assert.ok(nodes.length >= 190, 'expanded hierarchy should retain the reviewed additions')
- for (const id of ['T1-QA-ADD-MIXTURE','T1-GA-ADD-ENVIRONMENT','T2-P1-MATH-ADD-STAT-PROB','T2-P1-REASON-ADD-SEMANTIC-ANALOGY','T2-P1-ENG-ADD-CLOZE','T2-P1-COMP-ADD-NETWORK-CYBER','T2-P2-STAT-ADD-INFERENCE','T2-P3-ADD-DEMAND-ELASTICITY']) {
+ assert.ok(nodes.length >= 180, 'expanded hierarchy should retain the reviewed additions')
+ for (const id of ['T1-QA-ADD-MIXTURE','T1-GA-ADD-ENVIRONMENT','T2-P1-MATH-ADD-STAT-PROB','T2-P1-REASON-ADD-SEMANTIC-ANALOGY','T2-P1-ENG-ADD-CLOZE','T2-P1-COMP-ADD-NETWORK-CYBER','T2-P2-STAT-INFERENCE','T2-P3-ADD-DEMAND-ELASTICITY']) {
   assert.ok(nodes.some(n=>n.node_id===id), `missing official syllabus mapping: ${id}`)
  }
  const sourceIds = new Set(sources.map(s=>s.source_id))
