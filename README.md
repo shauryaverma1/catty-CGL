@@ -1,23 +1,28 @@
 # Purr & Petal — SSC CGL Study Website
 
-A cute, cozy, academically careful personal study website for SSC CGL preparation. This repository is the source of truth for project documentation, syllabus evidence, study content, and implementation starter files.
+A cute, cozy, academically careful personal SSC CGL study website. This repository holds the project brief, syllabus evidence, review rules, seed content, and an initial static front-end prototype.
 
-## Project status (as of 2026-10-26)
+## Project status (as of 2026-10-27)
 
-- Target exam cycle: **SSC CGL 2027**
+- Target exam cycle: **SSC CGL 2027**.
 - The syllabus research package uses the **official SSC CGL 2026 notice as a provisional prior-cycle baseline**.
-- The project team had **not verified an applicable SSC CGL 2027 notification** at the date of the handoff. Do not describe the 2026 mapping as the verified 2027 syllabus.
-- First recommended pilot lesson: **Tier-I General Intelligence & Reasoning — Analogies**.
-- Content in `content/lessons/analogies.starter.json` is a draft for review, not approved for publication.
-- Visual direction: pastel, warm, cozy, cute. Product should remain readable and accessible.
+- The project team had not located or verified the applicable SSC CGL 2027 notification in the official materials inspected for the research handoff. Do not describe the 2026 map as a verified 2027 syllabus.
+- A small static prototype is present at `index.html`, with `styles.css` and `app.js`.
+- The Analogies lesson in `content/lessons/analogies.starter.json` is **draft**, not approved for publication.
+- Visual direction: warm pastels, cozy and cute; readability and accessibility take priority over decoration.
 
 ## Repository map
 
 ```text
 .
+├── index.html
+├── styles.css
+├── app.js
+├── public/data/syllabus-seed.json
 ├── README.md
 ├── docs/
 │   ├── project-brief.md
+│   ├── project-status.md
 │   ├── implementation-plan.md
 │   ├── content-governance.md
 │   └── research/
@@ -37,31 +42,35 @@ A cute, cozy, academically careful personal study website for SSC CGL preparatio
 └── .github/workflows/validate-seed-data.yml
 ```
 
-The full, original 61-node hierarchy JSON and matching CSV are preserved losslessly as compressed Base64 source archives, so they remain available even though the GitHub contents API only accepted text for these uploads. Restore them to their original human-readable paths before local validation or frontend import.
+The complete original 61-node hierarchy JSON and its matching CSV are preserved losslessly in the two compressed Base64 archives in `docs/research/archive/`. They are not currently committed as plaintext. Run the restore script to recreate `docs/research/syllabus_hierarchy.json` and `docs/research/syllabus_hierarchy.csv`. The front-end prototype uses the separate, compact starter selection at `public/data/syllabus-seed.json`; it is not exhaustive.
 
-## Quick start
+## Run locally
 
-This starter package intentionally does not assume a framework or builder that has not been selected/inspected. Review `docs/implementation-plan.md` before choosing or wiring a runtime. The seed data can be imported by a future frontend after restoration.
-
-Requires Node.js 18+:
+Requires Node.js 18+ for the scripts. To serve the static page locally, run a small web server from the repository root (browsers generally block local JSON fetches from a `file://` URL).
 
 ```bash
+# Restore the original full research files
 node scripts/restore-research-source.mjs
+
+# Validate seed data and run tests
 node scripts/validate-syllabus.mjs
 node --test tests/validate-syllabus.test.mjs
+
+# Serve the prototype locally (Python 3)
+python -m http.server 8000
 ```
 
-The GitHub Actions workflow restores the hierarchy files before running the same checks on pushes and pull requests.
+Then open `http://localhost:8000`. GitHub Actions runs the restoration and validation checks on pushes and pull requests.
 
 ## Academic safety rules
 
-1. Keep the source cycle and target cycle distinct. `verified_official` on an item can mean verified against its cited **2026** source; it does not certify the 2027 syllabus.
+1. Keep source cycle and target cycle distinct. A mapping verified against the **2026** notice does not certify the 2027 syllabus.
 2. Keep syllabus mapping status separate from content approval status.
-3. Do not publish content until its source, answer key, explanations, and syllabus mapping have passed review.
-4. Editorial study groupings must not be described as official SSC taxonomy.
-5. Current-affairs material must record source, event date, publication date, last-verified date, review due date, and expiry/review status.
+3. Do not publish content as approved until its source, target-cycle mapping, answer key, explanations, and independent reviews pass.
+4. Editorial study groupings must not be described as SSC's official taxonomy.
+5. Current-affairs content requires a defined date window and source, event date, publication date, last-verified date, review due date, and expiry/review status.
 
-## Primary official source currently recorded
+## Primary official sources
 
 SSC Combined Graduate Level Examination, 2026 notice (provisional baseline only):  
 https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2026.pdf
@@ -69,4 +78,4 @@ https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_
 Official SSC syllabus portal (recheck for the target cycle):  
 https://ssc.gov.in/for-candidates/syllabus
 
-See `docs/research/research_status_report.md` for research limitations and next verification steps.
+See `docs/research/research_status_report.md` for source details, limitations, and the next verification steps.
