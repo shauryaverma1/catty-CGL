@@ -85,6 +85,8 @@ function recordShapeErrors(record) {
 
 function createContext({ syllabusNodes = [], sourceRegister = [] } = {}) {
   return {
+    syllabusNodes,
+    sourceRegister,
     syllabusById: new Map(syllabusNodes.map((node) => [node.node_id, node])),
     sourcesById: new Map(sourceRegister.map((source) => [source.source_id, source])),
   }
@@ -121,7 +123,10 @@ export function validateContentRecord(record, { syllabusNodes = [], sourceRegist
 }
 
 function approvalErrors(record, context, allRecords) {
-  const errors = validateContentRecord(record, context).errors
+  const errors = validateContentRecord(record, {
+    syllabusNodes: context.syllabusNodes,
+    sourceRegister: context.sourceRegister,
+  }).errors
   if (record.content_status !== 'approved') errors.push('content_status is not approved')
   if (record.academic_review_status !== 'approved') errors.push('academic_review_status is not approved')
 
@@ -129,15 +134,31 @@ function approvalErrors(record, context, allRecords) {
     const explanation = allRecords.find((candidate) =>
       candidate.content_type === 'answer_explanation' && candidate.content_id === record.explanation_id,
     )
-    if (!explanation || !isContentPublishable(explanation, context, allRecords)) {
-      errors.push('linked answer explanation is missing or not publishable')
+    if (!explanation ||
+      explanation.question_id !== record.content_id ||
+      explanation.content_status !== 'approved' ||
+      explanation.academic_review_status !== 'approved' ||
+      explanation.answer_verification_status !== 'approved' ||
+      validateContentRecord(explanation, {
+        syllabusNodes: context.syllabusNodes,
+        sourceRegister: context.sourceRegister,
+      }).valid !== true) {
+      errors.push('linked answer explanation is missing or not approved')
     }
   }
   if (record.content_type === 'answer_explanation') {
     const question = allRecords.find((candidate) =>
       candidate.content_type === 'question' && candidate.content_id === record.question_id,
     )
-    if (!question || question.content_status !== 'approved' || question.academic_review_status !== 'approved') {
+    if (!question ||
+      question.explanation_id !== record.content_id ||
+      question.content_status !== 'approved' ||
+      question.academic_review_status !== 'approved' ||
+      question.answer_verification_status !== 'approved' ||
+      validateContentRecord(question, {
+        syllabusNodes: context.syllabusNodes,
+        sourceRegister: context.sourceRegister,
+      }).valid !== true) {
       errors.push('linked question is missing or not approved')
     }
   }
