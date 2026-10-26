@@ -1,0 +1,26 @@
+name: Validate seed data
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Restore original syllabus hierarchy files
+        run: node scripts/restore-research-source.mjs
+      - name: Validate hierarchy structure
+        run: node scripts/validate-syllabus.mjs
+      - name: Run tests
+        run: node --test tests/validate-syllabus.test.mjs
