@@ -8,13 +8,13 @@
 ## Current repository state
 
 - [x] GitHub repository initialized.
-- [x] Role 02 initial research handoff copied into repository: status report, source register, topic shortlist and lossless archives for the full hierarchy JSON/CSV.
+- [x] Role 02 initial research handoff copied into the repository: status report, source register, topic shortlist and lossless archive of the complete hierarchy JSON.
 - [x] Project brief and framework-neutral implementation plan.
 - [x] Content mapping and publication governance.
 - [x] Lesson schema and one draft Analogies lesson.
 - [x] Static HTML/CSS/JavaScript prototype and compact UI seed map.
 - [x] Source restoration script, integrity validator, test and GitHub Actions workflow.
-- [ ] Full hierarchy restored as plaintext in the working checkout and independently audited.
+- [ ] Restore hierarchy plaintext files in the working checkout and independently audit them.
 - [ ] Final target-cycle syllabus verification.
 - [ ] Independent lesson answer review and sign-off.
 - [ ] Responsive/accessibility browser QA.
@@ -44,7 +44,9 @@
 
 ## Notes for the next contributor
 
-The static prototype is deliberately small and framework-free. It does not establish that a previously selected builder or hosting platform was inspected. Before adopting a production architecture, confirm whether a separate implementation already exists and preserve a working backup. The UI seed map is a compact sample; the full 61-node source hierarchy must be restored and used before calling the syllabus explorer comprehensive.
+The static prototype is deliberately small and framework-free. It does not establish that a previously selected builder or hosting platform was inspected. Before adopting a production architecture, confirm whether a separate implementation already exists and preserve a working backup. The UI seed map is a compact sample; the full hierarchy source must be restored and used before calling the syllabus explorer comprehensive.
+
+The original full hierarchy JSON is preserved in `docs/research/archive/syllabus_hierarchy.json.gz.b64`. The restore script regenerates the CSV export from that JSON, so the CSV reflects the same node data but is not a byte-for-byte archive of the previous CSV file.
 
 ## Research baseline and official links
 
