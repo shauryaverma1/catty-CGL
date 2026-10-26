@@ -67,4 +67,15 @@ test('approved working baseline label and exam-pattern structure are source link
  assert.equal(pattern.tiers[1].applicability, 'Compulsory for all posts')
  assert.ok(pattern.tiers[2].applicability.includes('Junior Statistical Officer'))
  assert.ok(pattern.tiers[3].applicability.includes('Assistant Audit Officer'))
+ const tier1 = pattern.tiers[0]
+ assert.equal(tier1.total_questions, 100)
+ assert.equal(tier1.negative_marking_per_wrong_answer, 0.5)
+ const paper1 = pattern.tiers[1]
+ assert.equal(paper1.total_objective_questions, 150)
+ assert.equal(paper1.total_objective_marks, 450)
+ assert.equal(paper1.sessions[0].sections.find(s=>s.name.includes('English Language')).sectional_minutes, 40)
+ assert.equal(paper1.sessions[0].sections.find(s=>s.name.includes('General Awareness')).sectional_minutes, 20)
+ assert.equal(paper1.negative_marking.includes('1 mark per wrong answer'), true)
+ assert.equal(pattern.tiers[2].negative_marking_per_wrong_answer, 0.5)
+ assert.equal(pattern.tiers[3].negative_marking_per_wrong_answer, 0.5)
 })
