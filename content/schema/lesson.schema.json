@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://purr-petal.local/schema/lesson.schema.json",
+  "title": "Purr & Petal Lesson",
+  "description": "Draft lesson data with separate syllabus mapping and content approval states.",
+  "type": "object",
+  "required": [
+    "lesson_id",
+    "title",
+    "topic_id",
+    "target_cycle",
+    "source_cycle",
+    "mapping_status",
+    "content_status",
+    "learning_objectives",
+    "sections",
+    "questions",
+    "flashcards",
+    "sources"
+  ],
+  "properties": {
+    "lesson_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "topic_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_cycle": {
+      "type": "integer",
+      "minimum": 2027
+    },
+    "source_cycle": {
+      "type": "integer",
+      "minimum": 2000
+    },
+    "mapping_status": {
+      "enum": [
+        "verified_official",
+        "provisional_previous_cycle",
+        "awaiting_official_confirmation",
+        "unresolved",
+        "out_of_scope"
+      ]
+    },
+    "content_status": {
+      "enum": [
+        "draft",
+        "needs_source",
+        "needs_syllabus_review",
+        "needs_answer_review",
+        "approved",
+        "out_of_scope",
+        "needs_update"
+      ]
+    },
+    "estimated_minutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "learning_objectives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "heading",
+          "body"
+        ],
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question_id",
+          "prompt",
+          "options",
+          "correct_option_id",
+          "explanation"
+        ],
+        "properties": {
+          "question_id": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "option_id",
+                "text"
+              ],
+              "properties": {
+                "option_id": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "correct_option_id": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "review_status": {
+            "enum": [
+              "draft",
+              "needs_answer_review",
+              "approved"
+            ]
+          }
+        }
+      }
+    },
+    "flashcards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "front",
+          "back"
+        ],
+        "properties": {
+          "front": {
+            "type": "string"
+          },
+          "back": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "url",
+          "description"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "outcome": {
+          "enum": [
+            "not_started",
+            "changes_requested",
+            "approved"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
