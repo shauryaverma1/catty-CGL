@@ -29,9 +29,7 @@ A cute, cozy, academically careful personal SSC CGL study website. This reposito
 │       ├── research_status_report.md
 │       ├── source_register.csv
 │       ├── starter_topic_shortlist.json
-│       └── archive/
-│           ├── syllabus_hierarchy.json.gz.b64
-│           └── syllabus_hierarchy.csv.gz.b64
+│       └── archive/syllabus_hierarchy.json.gz.b64
 ├── content/
 │   ├── schema/lesson.schema.json
 │   └── lessons/analogies.starter.json
@@ -42,17 +40,17 @@ A cute, cozy, academically careful personal SSC CGL study website. This reposito
 └── .github/workflows/validate-seed-data.yml
 ```
 
-The complete original 61-node hierarchy JSON and its matching CSV are preserved losslessly in the two compressed Base64 archives in `docs/research/archive/`. They are not currently committed as plaintext. Run the restore script to recreate `docs/research/syllabus_hierarchy.json` and `docs/research/syllabus_hierarchy.csv`. The front-end prototype uses the separate, compact starter selection at `public/data/syllabus-seed.json`; it is not exhaustive.
+The full original 61-node hierarchy JSON is preserved in the compressed Base64 archive under `docs/research/archive/`. The matching CSV is generated from that authoritative JSON when the restore script runs; the CSV is a derived export, not a byte-for-byte archive of the original CSV. The generated plaintext files are not currently committed. Run the restore script to recreate `docs/research/syllabus_hierarchy.json` and `docs/research/syllabus_hierarchy.csv`. The front-end prototype uses the separate, compact starter selection at `public/data/syllabus-seed.json`; it is not exhaustive.
 
 ## Run locally
 
 Requires Node.js 18+ for the scripts. To serve the static page locally, run a small web server from the repository root (browsers generally block local JSON fetches from a `file://` URL).
 
 ```bash
-# Restore the original full research files
+# Restore the original full research hierarchy JSON and generate CSV
 node scripts/restore-research-source.mjs
 
-# Validate seed data and run tests
+# Validate hierarchy structure and run tests
 node scripts/validate-syllabus.mjs
 node --test tests/validate-syllabus.test.mjs
 
@@ -78,4 +76,4 @@ https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_
 Official SSC syllabus portal (recheck for the target cycle):  
 https://ssc.gov.in/for-candidates/syllabus
 
-See `docs/research/research_status_report.md` for source details, limitations, and the next verification steps.
+See `docs/research/research_status_report.md` for source details, limitations, and next verification steps.
