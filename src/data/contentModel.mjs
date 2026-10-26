@@ -33,6 +33,11 @@ function recordShapeErrors(record) {
   if (!record || typeof record !== 'object' || Array.isArray(record)) return ['record must be an object']
   if (!nonEmpty(record.content_id)) errors.push('content_id is required')
   if (!TYPE_SET.has(record.content_type)) errors.push('content_type is invalid')
+  else if (nonEmpty(record.content_id) &&
+    (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(record.content_id) ||
+      !record.content_id.startsWith(({ lesson: 'lesson-', question: 'question-', answer_explanation: 'explanation-', flashcard: 'flashcard-' })[record.content_type]))) {
+    errors.push('content_id must be lowercase kebab-case with the content type prefix')
+  }
   if (!nonEmpty(record.topic_id)) errors.push('topic_id is required')
   if (!nonEmpty(record.target_exam_cycle)) errors.push('target_exam_cycle is required')
   if (!nonEmpty(record.syllabus_source_cycle)) errors.push('syllabus_source_cycle is required')
@@ -177,7 +182,14 @@ export function isContentPublishable(record, context = {}, allRecords = [record]
 export function getPublishedContent(records, context = {}) {
   if (!Array.isArray(records)) return []
   const validRecords = records.filter((record) => record && TYPE_SET.has(record.content_type))
-  return validRecords.filter((record) => isContentPublishable(record, context, validRecords))
+  const idCounts = new Map()
+  for (const record of validRecords) {
+    if (nonEmpty(record.content_id)) idCounts.set(record.content_id, (idCounts.get(record.content_id) || 0) + 1)
+  }
+  const uniqueRecords = validRecords.filter((record) =>
+    nonEmpty(record.content_id) && idCounts.get(record.content_id) === 1,
+  )
+  return uniqueRecords.filter((record) => isContentPublishable(record, context, uniqueRecords))
 }
 
 export function getPublishedContentByType(records, contentType, context = {}) {
