@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { BookOpen, ChevronDown, ChevronRight, ExternalLink, FileText, FilterX, Search, ShieldAlert } from 'lucide-react'
 import { syllabusNodes, sourceRegister, starterTopics, targetExamCycle, syllabusSourceCycle } from '../data/syllabusData'
+import ExamPattern from './ExamPattern'
 import { buildSyllabusTree, filterSyllabusTree, filterSyllabusByPath, targetCycleStatus, lessonStatus, type SyllabusTreeNode } from '../data/syllabusModel.mjs'
 
 const tierOptions = ['All tiers', ...new Set(syllabusNodes.map(node => node.tier).filter((tier): tier is string => Boolean(tier) && tier !== 'Exam'))]
@@ -8,7 +9,7 @@ const paperOptions = ['All papers', ...new Set(syllabusNodes.map(node => node.pa
 const subjectOptions = ['All subjects', ...new Set(syllabusNodes.map(node => node.subject).filter((subject): subject is string => Boolean(subject)))]
 const cycleLabel = (node: SyllabusTreeNode) => {
  const status=targetCycleStatus(node)
- if(status==='previous-cycle') return '2026 source · 2027 pending'
+ if(status==='previous-cycle') return '2026 baseline · 2027 prep'
  if(status==='awaiting-2027') return '2027 not verified'
  return 'Editorial / needs review'
 }
@@ -54,10 +55,10 @@ function SyllabusExplorer() {
  return <section className="syllabus-explorer">
   <div className="syllabus-intro">
    <div><div className="eyebrow"><BookOpen size={14}/> YOUR LEARNING GARDEN</div><h1>Explore your syllabus <span>✿</span></h1><p>Find a subject, open its topics and subtopics, and see what is ready to study.</p></div>
-   <div className="syllabus-cycle-card"><span>Target exam</span><strong>SSC CGL {targetExamCycle}</strong><small>Source baseline: SSC CGL {syllabusSourceCycle}</small></div>
+   <div className="syllabus-cycle-card"><span>Approved working baseline</span><strong>SSC CGL {syllabusSourceCycle}</strong><small>Used for {targetExamCycle} preparation</small></div>
   </div>
-  <div className="syllabus-alert" role="note"><ShieldAlert size={19}/><div><strong>2027 syllabus not yet verified</strong><p>Role 02 inspected the official 2026 notice. This is a previous-cycle reference, not confirmation of the 2027 syllabus. No item is marked as verified for 2027. Specialist Tier-II papers may apply only to candidates for specified posts.</p></div></div>
-  <div className="syllabus-stats"><div><strong>{syllabusNodes.length}</strong><span>source hierarchy entries</span></div><div><strong>{topicCount}</strong><span>topic / subtopic entries</span></div><div><strong>{previousCount}</strong><span>2026-source mappings</span></div></div>
+  <div className="syllabus-alert baseline-approved" role="note"><ShieldAlert size={19}/><div><strong>SSC CGL 2026 syllabus baseline — used for 2027 preparation</strong><p>The project owner has approved this as the working syllabus baseline. This project decision does not mean SSC has independently confirmed the 2027 syllabus. Specialist Tier-II Papers II and III apply only to candidates who meet the notification criteria.</p></div></div>
+  <div className="syllabus-stats"><div><strong>{syllabusNodes.length}</strong><span>source hierarchy entries</span></div><div><strong>{topicCount}</strong><span>topic / subtopic entries</span></div><div><strong>{previousCount}</strong><span>2026 baseline mappings</span></div></div>
   <div className="syllabus-controls">
    <label className="syllabus-search"><Search size={17}/><input value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search subject, topic, subtopic or source…" aria-label="Search syllabus"/></label>
    <label className="tier-filter"><span>Tier</span><select value={tier} onChange={event=>setTier(event.target.value)} aria-label="Filter by exam tier">{tierOptions.map(option=><option key={option}>{option}</option>)}</select></label>
@@ -66,6 +67,7 @@ function SyllabusExplorer() {
    <button className="clear-syllabus-filters" onClick={clearFilters} aria-label="Clear all syllabus filters"><FilterX size={15}/> Clear</button>
   </div>
   <div className="syllabus-legend"><span><i className="legend-dot previous"/> 2026 source · 2027 pending</span><span><i className="legend-dot pending"/> 2027 not verified</span><span><i className="legend-dot unresolved"/> Editorial / needs review</span><span><i className="legend-dot unavailable"/> Lesson not available</span></div>
+  <ExamPattern />
   <div className="syllabus-tree" aria-label="Syllabus hierarchy">{visibleTree.length?visibleTree.map(node=>renderNode(node)):<div className="syllabus-empty">No matching syllabus entries. Try clearing one of the filters.</div>}</div>
   <section className="starter-panel">
    <button className="source-toggle starter-toggle" onClick={()=>setShowStarters(!showStarters)} aria-expanded={showStarters}><span><span><span className="eyebrow">ROLE 02 SUGGESTED STARTERS</span><strong className="starter-heading">Small topics to begin with</strong></span><small>{starterTopics.length} suggested · none approved</small></span>{showStarters?<ChevronDown size={18}/>:<ChevronRight size={18}/>}</button>
@@ -75,7 +77,7 @@ function SyllabusExplorer() {
    <button className="source-toggle" onClick={()=>setShowSources(!showSources)} aria-expanded={showSources}><span><FileText size={17}/> Official source register <small>{sourceRegister.length} recorded sources</small></span>{showSources?<ChevronDown size={18}/>:<ChevronRight size={18}/>}</button>
    {showSources&&<div className="source-list">{sourceRegister.map(source=><article className="source-item" key={source.source_id}><div className="source-item-heading"><strong>{source.title}</strong><span className={source.official==='True'?'source-official':'source-context'}>{source.official==='True'?'Official source':'Reference'}</span></div><p>{source.publisher} · Cycle: {source.exam_cycle} · Checked: {source.access_date}</p><p><strong>Sections:</strong> {source.relevant_sections||'Not specified'} · <strong>Inspection:</strong> {source.inspection_status}</p><p><strong>Use:</strong> {source.intended_use}</p><p className="source-limit"><strong>Limit:</strong> {source.limitations}</p><a href={source.document_url} target="_blank" rel="noreferrer">Open source <ExternalLink size={13}/></a></article>)}</div>}
   </section>
-  <p className="syllabus-footnote">The supplied hierarchy is a starter extraction, not exhaustive normalization. Editorial General Awareness groupings remain explicitly unresolved. Syllabus mapping does not approve lessons, questions, explanations or answers.</p>
+  <p className="syllabus-footnote">The Role 02 handoff explicitly describes this as a starter extraction, not exhaustive normalization. Editorial General Awareness groupings remain unresolved. This baseline decision does not approve lessons, questions, explanations or answers; each requires separate content and academic review.</p>
  </section>
 }
 export default SyllabusExplorer
