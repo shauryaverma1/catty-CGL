@@ -1,0 +1,157 @@
+{
+  "baseline_id": "SSC_CGL_2026",
+  "display_label": "SSC CGL 2026 syllabus baseline — used for 2027 preparation",
+  "source_id": "SSC-CGL-2026-NOTICE",
+  "source_url": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2026.pdf",
+  "source_sections": "§13.1, §13.8–§13.9.10; printed PDF pages 24–30",
+  "checked_date": "2026-10-27",
+  "status_note": "The project owner approved the 2026 baseline for 2027 preparation. This is a project working decision, not evidence that SSC has published or confirmed a 2027 syllabus.",
+  "tiers": [
+    {
+      "id": "tier-i",
+      "name": "Tier-I",
+      "question_type": "Objective type, multiple-choice questions",
+      "duration_minutes": 60,
+      "scribe_duration_minutes": 80,
+      "negative_marking_per_wrong_answer": 0.5,
+      "language": "English and Hindi, except English Comprehension",
+      "subjects": [
+        {
+          "name": "General Intelligence and Reasoning",
+          "questions": 25,
+          "marks": 50,
+          "sectional_minutes": 15
+        },
+        {
+          "name": "General Awareness",
+          "questions": 25,
+          "marks": 50,
+          "sectional_minutes": 15
+        },
+        {
+          "name": "Quantitative Aptitude",
+          "questions": 25,
+          "marks": 50,
+          "sectional_minutes": 15
+        },
+        {
+          "name": "English Comprehension",
+          "questions": 25,
+          "marks": 50,
+          "sectional_minutes": 15
+        }
+      ],
+      "total_questions": 100,
+      "total_marks": 200,
+      "notes": [
+        "Sectional timer: 15 minutes per subject.",
+        "For candidates eligible for a scribe under notice paragraphs 7.1–7.3: 1 hour 20 minutes total, with 20 minutes per subject."
+      ]
+    },
+    {
+      "id": "tier-ii-paper-i",
+      "name": "Tier-II · Paper-I",
+      "applicability": "Compulsory for all posts",
+      "sessions": [
+        {
+          "name": "Session-I",
+          "duration_minutes": 135,
+          "sections": [
+            {
+              "name": "Section-I · Mathematical Abilities",
+              "questions": 30,
+              "marks": 90,
+              "sectional_minutes": 30
+            },
+            {
+              "name": "Section-I · Reasoning and General Intelligence",
+              "questions": 30,
+              "marks": 90,
+              "sectional_minutes": 30
+            },
+            {
+              "name": "Section-II · English Language and Comprehension",
+              "questions": 45,
+              "marks": 135,
+              "sectional_minutes": 40
+            },
+            {
+              "name": "Section-II · General Awareness",
+              "questions": 25,
+              "marks": 75,
+              "sectional_minutes": 20
+            },
+            {
+              "name": "Section-III · Computer Knowledge Test",
+              "questions": 20,
+              "marks": 60,
+              "duration_minutes": 15,
+              "qualifying": true
+            }
+          ]
+        },
+        {
+          "name": "Session-II",
+          "duration_minutes": 15,
+          "sections": [
+            {
+              "name": "Section-IV · Data Entry Speed Test (DEST)",
+              "questions": null,
+              "marks": null,
+              "duration_minutes": 15,
+              "qualifying": true,
+              "description": "One data-entry task; approximately 2,000 key depressions in 15 minutes, as stated in the notice."
+            }
+          ]
+        }
+      ],
+      "total_objective_questions": 150,
+      "total_objective_marks": 450,
+      "negative_marking": "1 mark per wrong answer in Sections I, II and III; DEST is a skill test, not an MCQ section.",
+      "notes": [
+        "Paper-I is conducted in two sessions on the same day.",
+        "Each section must be qualified separately. Computer Knowledge Test and DEST are qualifying in nature; post-specific higher standards may apply.",
+        "Section-I: 60 questions / 180 marks; Section-II: 70 questions / 210 marks; Section-III: 20 questions / 60 marks."
+      ]
+    },
+    {
+      "id": "tier-ii-paper-ii",
+      "name": "Tier-II · Paper-II · Statistics",
+      "applicability": "Only candidates who apply and are shortlisted for Junior Statistical Officer or Statistical Investigator Grade-II posts, as specified in the notice.",
+      "questions": 100,
+      "marks": 200,
+      "duration_minutes": 120,
+      "scribe_duration_minutes": 160,
+      "negative_marking_per_wrong_answer": 0.5,
+      "question_type": "Objective type, multiple-choice questions"
+    },
+    {
+      "id": "tier-ii-paper-iii",
+      "name": "Tier-II · Paper-III · General Studies (Finance and Economics)",
+      "applicability": "Only candidates shortlisted for Assistant Audit Officer / Assistant Accounts Officer posts, as specified in the notice.",
+      "questions": 100,
+      "marks": 200,
+      "duration_minutes": 120,
+      "scribe_duration_minutes": 160,
+      "negative_marking_per_wrong_answer": 0.5,
+      "question_type": "Objective type, multiple-choice questions"
+    }
+  ],
+  "citations": [
+    {
+      "section": "§13.1",
+      "printed_pages": "24",
+      "supports": "Computer-based examination conducted in Tier-I and Tier-II."
+    },
+    {
+      "section": "§13.8–§13.8.2",
+      "printed_pages": "25",
+      "supports": "Tier-I subjects, question counts, marks, duration, sectional timers, language and negative marking."
+    },
+    {
+      "section": "§13.9–§13.9.10",
+      "printed_pages": "25–30",
+      "supports": "Tier-II papers, sections, sessions, question counts, marks, durations, negative marking and specialist-paper applicability."
+    }
+  ]
+}
