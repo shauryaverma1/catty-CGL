@@ -38,3 +38,10 @@ Run CI after the expanded mapping commit, then have a second reviewer compare ev
 ## CI failure found and fix
 
 Run `40408414711` failed in the new test because it incorrectly required every hierarchy node to cite only `SSC-CGL-2026-NOTICE`; the existing source register legitimately includes `SSC-SYLLABUS-PORTAL` for portal-sourced entries. The test was corrected to validate that every node's source ID exists in the source register, while requiring a non-empty source reference. This is a test expectation correction, not a change to source attribution. The corrected run must pass before this blocker is closed.
+
+
+## Duplicate and hierarchy-parent audit update
+
+A structural scan found 13 duplicate topic nodes created during the expansion: 12 repeated Statistics heading nodes and one repeated market-forms node. Their detailed wording was merged into the pre-existing nodes, and the redundant nodes were removed. Five explicit structural containers were added for Tier-I, Tier-II and Tier-II Papers I–III. The hierarchy's top-level subject/module parent assignments were corrected to follow those containers; specialist papers remain separate. The current total is **185 hierarchy records** (not 193); this is a record count including container nodes, not a count of unique examinable topics.
+
+Automated structural scan after correction: 185 records; duplicate IDs: 0; missing parent links: 0; missing source references: 0. Remaining repeated labels such as “General Awareness” across Tier-I and Tier-II are intentional because they are distinct exam components. The three editorial GA groupings remain unresolved. The hierarchy is still **not certified exhaustive**: official paragraph-by-paragraph wording review and independent academic sign-off remain open.
