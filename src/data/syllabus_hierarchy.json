@@ -2242,7 +2242,7 @@
     "section": "Section-I, Module-I",
     "subject": "Mathematical Abilities",
     "topic": "Trigonometry",
-    "subtopic": "Trigonometry, Trigonometric ratios, Complementary angles, Height and distances (simple problems only).",
+    "subtopic": "Trigonometry; trigonometric ratios; complementary angles; heights and distances (simple problems only); standard identities such as sin²θ + cos²θ = 1.",
     "official_wording": "Trigonometry — Trigonometry, Trigonometric ratios, Complementary angles, Height and distances (simple problems only).",
     "source_id": "SSC-CGL-2026-NOTICE",
     "source_reference": "13.11.1.6",
@@ -2260,7 +2260,7 @@
     "section": "Section-I, Module-I",
     "subject": "Mathematical Abilities",
     "topic": "Statistics and probability",
-    "subtopic": "Use of tables and graphs; Histogram, Frequency polygon, Bar-diagram, Pie-chart; measures of central tendency; standard deviation; calculation of simple probabilities.",
+    "subtopic": "Use of Tables and Graphs; Histogram, Frequency polygon, Bar-diagram, Pie-chart; measures of central tendency (mean, median, mode); standard deviation; calculation of simple probabilities.",
     "official_wording": "Statistics and probability — Use of tables and graphs; Histogram, Frequency polygon, Bar-diagram, Pie-chart; measures of central tendency; standard deviation; calculation of simple probabilities.",
     "source_id": "SSC-CGL-2026-NOTICE",
     "source_reference": "13.11.1.7",
@@ -3328,5 +3328,25 @@
     "source_reference": "§13.9; §13.11.7",
     "mapping_status": "verified_official",
     "research_notes": "Specialist paper; eligibility restrictions apply."
+  },
+  {
+    "node_id": "T2-P1-REASON-ADD-SPACE-VISUALIZATION",
+    "parent_id": "T2-P1-REASON",
+    "exam": "SSC_CGL",
+    "exam_cycle": "2026",
+    "syllabus_baseline": "SSC_CGL_2026",
+    "tier": "Tier-II",
+    "paper": "Tier-II Paper-I",
+    "section": "Section-I, Module-II",
+    "subject": "Reasoning and General Intelligence",
+    "topic": "Space visualization",
+    "subtopic": null,
+    "official_wording": "Space visualization",
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "source_reference": "§13.11.2.1",
+    "mapping_status": "verified_official",
+    "content_status": "not_started",
+    "academic_review_status": "not_applicable",
+    "research_notes": "Added in the line-by-line audit after identifying an omitted explicit Tier-II Reasoning item. Official 2026 baseline only; 2027 notification remains unverified."
   }
 ]
