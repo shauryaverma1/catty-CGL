@@ -204,3 +204,28 @@ h1, h2, h3, p { margin-top: 0; }
  .syllabus-legend { gap:9px 12px; }
  .mapping-pill { max-width:150px; }
 }
+
+/* Approved working baseline and structured exam-pattern panel */
+.baseline-approved { background:#f3f6ec; border-color:#dfe8d3; color:#647554; }
+.baseline-approved svg { color:#7f986a; }
+.exam-pattern-panel { margin:18px 0; padding:15px 17px; background:#fffdf9; border:1px solid #eee1d9; border-radius:15px; }
+.exam-pattern-content { padding-top:12px; }
+.pattern-tier { padding:12px 0; border-top:1px solid #f0e7e0; }
+.pattern-tier:first-child { border-top:0; padding-top:0; }
+.pattern-tier-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.pattern-tier-heading h3 { margin:0; color:#695149; font:800 14px 'Nunito',sans-serif; }
+.pattern-tier-heading span { color:#a17f73; background:#fbf0ea; border-radius:8px; padding:5px 8px; font-size:10px; }
+.pattern-table,.pattern-session { margin-top:9px; }
+.pattern-session > strong { display:block; margin:8px 0; color:#937368; font-size:11px; }
+.pattern-row { display:grid; grid-template-columns:minmax(160px,2fr) repeat(3,minmax(75px,1fr)); gap:10px; padding:9px 10px; border-radius:8px; align-items:center; font-size:10px; color:#927f75; }
+.pattern-row:nth-child(odd) { background:#fbf7f2; }
+.pattern-row strong { color:#6d5950; font-weight:700; }
+.pattern-note { margin:7px 0 0; color:#8f7d73; font-size:10px; line-height:1.6; }
+.pattern-source { margin:12px 0 0; padding-top:10px; border-top:1px dashed #e8d9cf; display:flex; flex-wrap:wrap; gap:5px; color:#a08c81; font-size:10px; }
+.pattern-source a { display:inline-flex; align-items:center; gap:4px; color:#a66d7b; font-weight:700; text-decoration:none; }
+@media(max-width:650px) {
+ .exam-pattern-panel { padding:12px; }
+ .pattern-row { grid-template-columns:minmax(0,1fr) auto; gap:5px 10px; }
+ .pattern-row strong { grid-column:1/-1; }
+ .pattern-tier-heading { align-items:flex-start; }
+}
