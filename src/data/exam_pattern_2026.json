@@ -62,13 +62,15 @@
               "name": "Section-I · Mathematical Abilities",
               "questions": 30,
               "marks": 90,
-              "sectional_minutes": 30
+              "sectional_minutes": 30,
+              "scribe_sectional_minutes": 40
             },
             {
               "name": "Section-I · Reasoning and General Intelligence",
               "questions": 30,
               "marks": 90,
-              "sectional_minutes": 30
+              "sectional_minutes": 30,
+              "scribe_sectional_minutes": 40
             },
             {
               "name": "Section-II · English Language and Comprehension",
@@ -91,9 +93,11 @@
               "questions": 20,
               "marks": 60,
               "duration_minutes": 15,
-              "qualifying": true
+              "qualifying": true,
+              "scribe_duration_minutes": 20
             }
-          ]
+          ],
+          "scribe_duration_minutes": 180
         },
         {
           "name": "Session-II",
@@ -107,7 +111,8 @@
               "qualifying": true,
               "description": "One data-entry task; approximately 2,000 key depressions in 15 minutes, as stated in the notice."
             }
-          ]
+          ],
+          "scribe_duration_minutes": 20
         }
       ],
       "total_objective_questions": 150,
@@ -120,7 +125,8 @@
         "Section-II (English Language and Comprehension + General Awareness): 70 questions / 210 marks in 60 minutes total.",
         "Section-III Computer Knowledge Test: 20 questions / 60 marks in 15 minutes. Section-IV DEST is a qualifying skill test.",
         "Negative marking: 1 mark for each wrong answer in Sections I, II and III of Paper-I (§13.9.8).",
-        "For candidates eligible for a scribe, Session-I subject/section timing is adjusted under §13.9; see the official notice for the full compensatory-time provisions."
+        "For candidates eligible for a scribe, Session-I subject/section timing is adjusted under §13.9; see the official notice for the full compensatory-time provisions.",
+        "Scribe-eligible timing: Section-I subject timers are 40 minutes each; Section-II timers are 55 minutes for English and 25 minutes for General Awareness; Computer Knowledge Test is 20 minutes; DEST receives an additional 5 minutes (20 minutes total), subject to the notice's eligibility rules."
       ]
     },
     {
