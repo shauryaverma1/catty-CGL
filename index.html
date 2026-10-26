@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7fb">
+  <meta name="description" content="Purr & Petal — a cozy, academically careful SSC CGL study space.">
+  <title>Purr & Petal — Study gently, grow steadily</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Purr and Petal home">
+      <span class="brand-mark" aria-hidden="true">✿</span>
+      <span><strong>Purr &amp; Petal</strong><small>your cozy CGL study nook</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#syllabus">Syllabus nook</a>
+      <a href="#starter">Starter lesson</a>
+      <a href="#about">Our study promise</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A little progress, every day</p>
+        <h1>Make room for <span>your next big thing.</span></h1>
+        <p class="hero-text">A gentle study space for SSC CGL preparation: clear topics, bite-sized learning, and sources you can trust.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#syllabus">Explore the syllabus <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#starter">Peek at the starter lesson</a>
+        </div>
+        <div class="hero-note"><span aria-hidden="true">♡</span> Slow is still forward. Keep going at your own pace.</div>
+      </div>
+      <div class="hero-art" aria-label="Decorative pastel study illustration" role="img">
+        <div class="art-sun"></div><div class="art-plant">✿</div>
+        <div class="art-book book-back"></div><div class="art-book book-front"><span>one page<br>at a time</span></div>
+        <div class="art-star star-one">✦</div><div class="art-star star-two">✧</div>
+        <div class="art-paw">♡</div>
+      </div>
+    </section>
+
+    <section class="cycle-notice" aria-labelledby="cycle-title">
+      <div class="notice-symbol" aria-hidden="true">!</div>
+      <div>
+        <h2 id="cycle-title">A careful note about the 2027 syllabus</h2>
+        <p>The seed topics below are mapped from the official SSC CGL 2026 notice. The applicable 2027 notice was not verified in this research handoff, so mappings remain <strong>provisional for 2027</strong> until SSC's notice and corrigenda are checked.</p>
+      </div>
+      <a href="https://ssc.gov.in/" target="_blank" rel="noreferrer">Check SSC ↗</a>
+    </section>
+
+    <section id="syllabus" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Find your next small step</p>
+          <h2>Your syllabus nook</h2>
+          <p>Browse the starter map. Every topic carries a clear source-cycle and review status.</p>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Search syllabus topics</span>
+          <span aria-hidden="true">⌕</span>
+          <input id="topic-search" type="search" placeholder="Search topics…" autocomplete="off">
+        </label>
+      </div>
+      <div class="status-legend" aria-label="Status legend">
+        <span class="status status-provisional">Provisional for 2027</span>
+        <span class="status status-awaiting">Awaiting official confirmation</span>
+      </div>
+      <p id="syllabus-count" class="result-count" aria-live="polite">Loading starter topics…</p>
+      <div id="syllabus-tree" class="syllabus-tree">
+        <div class="loading-state">Gathering the study cards…</div>
+      </div>
+      <p class="small-note">This is a starter selection, not a claim of exhaustive syllabus coverage. Editorial groupings are kept separate from official wording.</p>
+    </section>
+
+    <section id="starter" class="section lesson-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your first tiny lesson</p>
+          <h2>Analogies, made friendlier</h2>
+          <p>Spot a relationship, name it, then carry it across the pair.</p>
+        </div>
+        <span class="status status-draft">Draft · review pending</span>
+      </div>
+      <article class="lesson-card">
+        <div class="lesson-icon" aria-hidden="true">☁</div>
+        <div class="lesson-card-copy">
+          <p class="eyebrow">Tier-I · General Intelligence &amp; Reasoning</p>
+          <h3 id="lesson-title">Analogies: Find the Relationship</h3>
+          <p id="lesson-summary">An analogy asks you to recognize the relationship in one pair and apply the same relationship to another pair.</p>
+          <p class="draft-caution"><strong>Preview only:</strong> this lesson is a draft. Its examples and questions have not yet passed independent academic review and are not marked approved.</p>
+          <button id="lesson-preview-button" class="secondary-button" type="button" aria-expanded="false" aria-controls="lesson-preview">Open lesson preview</button>
+        </div>
+      </article>
+      <div id="lesson-preview" class="lesson-preview" hidden></div>
+    </section>
+
+    <section id="about" class="promise-section">
+      <p class="eyebrow">Cute can still be rigorous</p>
+      <h2>Kind to your brain. Careful with the facts.</h2>
+      <div class="promise-grid">
+        <article><span aria-hidden="true">♡</span><h3>Small, steady steps</h3><p>Lessons are built to be approachable, with clear explanations and room to revise.</p></article>
+        <article><span aria-hidden="true">⌕</span><h3>Sources stay visible</h3><p>Every syllabus mapping points back to a source and states which exam cycle it supports.</p></article>
+        <article><span aria-hidden="true">✓</span><h3>Review before approval</h3><p>A topic mapping and a lesson's correctness are separate checks. Drafts stay labelled as drafts.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">✿</span><span><strong>Purr &amp; Petal</strong><small>study gently, grow steadily</small></span></a>
+    <p>Made for learning, with care. Always verify exam-cycle updates with official SSC notices.</p>
+    <a href="docs/research/research_status_report.md">Research status ↗</a>
+  </footer>
+</body>
+</html>
