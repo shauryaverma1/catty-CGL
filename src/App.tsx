@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BookOpen, CalendarDays, Check, ChevronRight, CircleHelp, Clock3, Flower2, Heart, House, Leaf, Menu, PawPrint, Play, Search, Sparkles, Target, X } from 'lucide-react'
 import { placeholderNotice, placeholderSubjects } from './data/placeholders'
+import SyllabusExplorer from './components/SyllabusExplorer'
 
 type View = 'Home' | 'Syllabus' | 'Practice' | 'My Notes' | 'Flashcards'
 
@@ -67,7 +68,7 @@ function App() {
             <button className="banner-close" onClick={() => setNoticeVisible(false)} aria-label="Dismiss placeholder notice"><X size={17} /></button>
           </div>}
 
-          {activeView === 'Home' ? (
+          {activeView === 'Syllabus' ? <SyllabusExplorer /> : activeView === 'Home' ? (
             <>
               <section className="welcome-row">
                 <div>
