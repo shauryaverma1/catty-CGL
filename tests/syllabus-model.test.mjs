@@ -56,3 +56,15 @@ test('topics remain unavailable until both content and academic review are expli
  assert.equal(lessonStatus({...node,content_status:'approved'}),'unavailable')
  assert.equal(lessonStatus({...node,content_status:'approved',academic_review_status:'approved'}),'approved')
 })
+
+
+test('approved working baseline label and exam-pattern structure are source linked', async () => {
+ const pattern = JSON.parse(await readFile(new URL('../src/data/exam_pattern_2026.json', import.meta.url), 'utf8'))
+ assert.equal(pattern.display_label, 'SSC CGL 2026 syllabus baseline — used for 2027 preparation')
+ assert.equal(pattern.source_id, 'SSC-CGL-2026-NOTICE')
+ assert.equal(pattern.tiers.length, 4)
+ assert.equal(pattern.tiers[0].total_questions, 100)
+ assert.equal(pattern.tiers[1].applicability, 'Compulsory for all posts')
+ assert.ok(pattern.tiers[2].applicability.includes('Junior Statistical Officer'))
+ assert.ok(pattern.tiers[3].applicability.includes('Assistant Audit Officer'))
+})
