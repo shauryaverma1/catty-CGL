@@ -72,3 +72,8 @@ test('bad option IDs, answer keys, and status strings are rejected', () => {
   assert.equal(validateContentRecord(question({ options: [{ option_id: 'A', text: 'one' }, { option_id: 'A', text: 'two' }] }), context).valid, false)
   assert.equal(validateContentRecord(lesson({ content_status: 'published' }), context).valid, false)
 })
+
+test('stable ID prefixes are enforced and duplicate IDs are never published', () => {
+  assert.equal(validateContentRecord(lesson({ content_id: 'AnalogiesLesson' }), context).valid, false)
+  assert.deepEqual(getPublishedContent([lesson(), lesson({ title: 'Duplicate record' })], context), [])
+})
