@@ -33,3 +33,8 @@ Source citations for the displayed scheme: §13.8–§13.8.2, §13.9–§13.9.10
 ## Next verification gate
 
 Run CI after the expanded mapping commit, then have a second reviewer compare every source paragraph to the tree, confirm no omissions/duplicates or wrong paper placement, and sign off on the final record count. Do not start a large academic-content batch before that review.
+
+
+## CI failure found and fix
+
+Run `40408414711` failed in the new test because it incorrectly required every hierarchy node to cite only `SSC-CGL-2026-NOTICE`; the existing source register legitimately includes `SSC-SYLLABUS-PORTAL` for portal-sourced entries. The test was corrected to validate that every node's source ID exists in the source register, while requiring a non-empty source reference. This is a test expectation correction, not a change to source attribution. The corrected run must pass before this blocker is closed.
