@@ -73,13 +73,15 @@
               "name": "Section-II · English Language and Comprehension",
               "questions": 45,
               "marks": 135,
-              "sectional_minutes": 40
+              "sectional_minutes": null,
+              "section_time_note": "Section-II total is 60 minutes for English Language and Comprehension plus General Awareness; the notice does not assign separate subject timers here."
             },
             {
               "name": "Section-II · General Awareness",
               "questions": 25,
               "marks": 75,
-              "sectional_minutes": 20
+              "sectional_minutes": null,
+              "section_time_note": "Section-II total is 60 minutes for English Language and Comprehension plus General Awareness; the notice does not assign separate subject timers here."
             },
             {
               "name": "Section-III · Computer Knowledge Test",
@@ -111,7 +113,9 @@
       "notes": [
         "Paper-I is conducted in two sessions on the same day.",
         "Each section must be qualified separately. Computer Knowledge Test and DEST are qualifying in nature; post-specific higher standards may apply.",
-        "Section-I: 60 questions / 180 marks; Section-II: 70 questions / 210 marks; Section-III: 20 questions / 60 marks."
+        "Section-I (Mathematical Abilities + Reasoning): 60 questions / 180 marks in 60 minutes, with 30 minutes per subject.",
+        "Section-II (English Language and Comprehension + General Awareness): 70 questions / 210 marks in 60 minutes total.",
+        "Section-III Computer Knowledge Test: 20 questions / 60 marks in 15 minutes. Section-IV DEST is a qualifying skill test."
       ]
     },
     {
