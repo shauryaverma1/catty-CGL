@@ -1,0 +1,47 @@
+[
+  {
+    "source_id": "SSC-CGL-2026-NOTICE",
+    "exam_cycle": "2026",
+    "publisher": "Staff Selection Commission, Government of India",
+    "title": "Combined Graduate Level Examination, 2026 — Notice",
+    "document_url": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2026.pdf",
+    "publication_date": "Notice says to be uploaded on 2026-05-21; separate signed publication timestamp not established in this research",
+    "document_length_pages": "132",
+    "relevant_sections": "§13.8–13.11; printed PDF pages 25–37; notice identity on PDF page 1",
+    "access_date": "2026-10-26",
+    "inspection_status": "Directly inspected official PDF and syllabus passages",
+    "official": "True",
+    "intended_use": "Controlling provisional syllabus baseline for SSC CGL 2027 until the 2027 notice is verified",
+    "limitations": "2027 notification not located/verified in this research. Must check amendments/corrigenda. This source verifies 2026 only."
+  },
+  {
+    "source_id": "SSC-CGL-2024-SYLLABUS",
+    "exam_cycle": "2024",
+    "publisher": "Staff Selection Commission, Government of India",
+    "title": "Combined Graduate Level Examination, 2024 — Scheme and Syllabus",
+    "document_url": "https://ssc.gov.in/api/attachment/uploads/masterData/Syllabus/CGL-syllabus-169635-.pdf",
+    "publication_date": "Not established from inspected PDF excerpt",
+    "document_length_pages": "7",
+    "relevant_sections": "Scheme of Tier-I and Tier-II; syllabus sections in 7-page official PDF",
+    "access_date": "2026-10-26",
+    "inspection_status": "Official PDF opened and scheme pages inspected; not used to claim 2025-to-2026 change comparison",
+    "official": "True",
+    "intended_use": "Historical reference only; not a substitute for 2026 or 2027 notice",
+    "limitations": "Older cycle; detailed full-syllabus comparison not completed in this workstream."
+  },
+  {
+    "source_id": "SSC-SYLLABUS-PORTAL",
+    "exam_cycle": "Current portal",
+    "publisher": "Staff Selection Commission, Government of India",
+    "title": "Syllabus",
+    "document_url": "https://ssc.gov.in/for-candidates/syllabus",
+    "publication_date": "Not shown in inspected response",
+    "document_length_pages": "",
+    "relevant_sections": "Official syllabus landing page",
+    "access_date": "2026-10-26",
+    "inspection_status": "Official landing page opened; displayed no downloadable syllabus data in inspected response",
+    "official": "True",
+    "intended_use": "Navigation point to recheck for future syllabus files",
+    "limitations": "Inspected response did not expose a specific 2027 CGL syllabus document."
+  }
+]
