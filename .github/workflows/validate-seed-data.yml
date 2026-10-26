@@ -22,5 +22,5 @@ jobs:
         run: node scripts/restore-research-source.mjs
       - name: Validate hierarchy structure
         run: node scripts/validate-syllabus.mjs
-      - name: Run tests
+      - name: Run data and syntax tests
         run: node --test tests/validate-syllabus.test.mjs
