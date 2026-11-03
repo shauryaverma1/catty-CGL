@@ -1,0 +1,9 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { readJournal, saveJournal, upsertById, deleteById, getPeriodSummary, getStudyStreak, getMonthDays, JOURNAL_STORAGE_KEY } from '../src/data/studyJournalModel.mjs'
+function memoryStorage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v)}}
+test('journal saves and reloads durable structured data',()=>{const store=memoryStorage();const value={activities:[{id:'a',date:'2026-11-03',durationMinutes:40}],tasks:[],reflections:[]};saveJournal(value,store);assert.deepEqual(readJournal(store),value);assert.ok(store.getItem(JOURNAL_STORAGE_KEY))})
+test('editing replaces an entry and deleting removes it',()=>{let rows=upsertById([{id:'a',topic:'Old'}],{id:'a',topic:'New'});assert.equal(rows.length,1);assert.equal(rows[0].topic,'New');rows=deleteById(rows,'a');assert.deepEqual(rows,[])})
+test('date selection is local-calendar based and month grid includes every date',()=>{assert.equal(getMonthDays(2026,10).filter(Boolean).length,30);assert.ok(getMonthDays(2026,10).includes('2026-11-03'))})
+test('weekly and monthly summaries calculate time, subjects, activities and consistency',()=>{const activities=[{date:'2026-11-02',subject:'Reasoning',durationMinutes:60},{date:'2026-11-03',subject:'Maths',durationMinutes:30}];const s=getPeriodSummary(activities,'2026-11-01','2026-11-07',[{date:'2026-11-03',completed:true}]);assert.equal(s.totalMinutes,90);assert.equal(s.subjectMinutes.Reasoning,60);assert.equal(s.completedActivities,2);assert.equal(s.activeDays,2);assert.equal(s.consistency,29);assert.equal(s.completedTasks,1)})
+test('streak uses actual positive-duration activity dates only',()=>{const a=[{date:'2026-11-01',durationMinutes:25},{date:'2026-11-02',durationMinutes:10},{date:'2026-11-03',durationMinutes:0}];assert.equal(getStudyStreak(a,'2026-11-03'),2);assert.equal(getStudyStreak(a,'2026-11-05'),0)})
