@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { BookOpen, CalendarDays, Check, ChevronLeft, ChevronRight, Clock3, Flower2, Flame, Pencil, Plus, Save, Sparkles, Trash2, X } from 'lucide-react'
-import { ACTIVITY_TYPES, TIME_SOURCES, dateKey, getMonthDays, getPeriodSummary, getStudyStreak, monthKey, readJournal, saveJournal, upsertById, deleteById } from '../data/studyJournalModel.mjs'
+import { ACTIVITY_TYPES, dateKey, getMonthDays, getPeriodSummary, getStudyStreak, readJournal, saveJournal, upsertById, deleteById } from '../data/studyJournalModel.mjs'
 
 type Activity = { id:string; date:string; subject:string; topic:string; activityType:string; durationMinutes:number; questionsAttempted:number; correctAnswers:number; notes:string; timeSource:string }
 type Task = { id:string; date:string; title:string; completed:boolean }
